@@ -1,0 +1,352 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Edufy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+    <!--
+    <link rel="stylesheet" href="css/bootstrap_full.css">
+    -->
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/cover.css">
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/vendor/lodash.js"></script>
+    <script type="text/javascript" src="js/vendor/angular.js"></script>
+    <!-- http://www.berriart.com/sidr/#getstarted -->
+    <script type="text/javascript" src="js/jquery.sidr.min.js"></script>
+
+
+    <!-- https://github.com/mgonto/angular-wizard -->
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/angular.wizard/latest/angular-wizard.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/angular-wizard.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.sidr.dark.css">
+
+    <script src="js/main.js"></script>
+
+</head>
+
+
+<div id="sidr-right">
+    <!-- Your content -->
+    <ul>
+        <li><a href="#" style="color: blue;">1. What to pack?</a></li>
+        <li><a href="#" style=''>2. Your departure</a></li>
+        <li><a href="#" style='line-height: 30px;' ng-click="toStartFinancialTransportationWizard();">3. Means of financial transportation</a></li>
+        <li><a href="#" style='' ng-click="toStartSecondWizard();" >4. Getting prepared</a></li>
+    </ul>
+</div>
+
+<div id="sidr-left">
+    <!-- Your content
+    <ul>
+        <li><a href="active">Wie optimiere ich mein Girokonto?</a></li>
+        <li class="#"><a href="#">Wie spare ich am besten?</a></li>
+        <li><a href="#">Wie lasse ich mein Geld arbeiten?</a></li>
+    </ul>
+    -->
+</div>
+
+<body ng-controller="WelcomeController">
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="site-wrapper" ng-init="startSecondWizard = false; startFinancialWizard = false;">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="masthead clearfix">
+                <div class="inner row">
+                    <div class="col-md-2">
+                        <span style="text-align: left;">
+                            <div>
+                                <a id="simple-menu-left" href="#simple-menu-left" ><span class="glyphicon glyphicon-menu-left"></span>Finance news</a>
+                                <br>
+                                <br>
+                                <img class="img-responsive" src="img/Logo_small.gif">
+                            </div>
+                        </span>
+                    </div>
+                    <div class="col-md-8">
+                    </div>
+                    <div class="col-md-2">
+                        <span style="text-align: right;">
+                            <a id="simple-menu-right" href="#simple-menu-right">Travel stages <span ng-hide="opentheRight" class="glyphicon glyphicon-menu-right"></span><span ng-show="opentheRight" class="glyphicon glyphicon-menu-left"></span></a>
+                        </span>
+                    </div>
+                    <!--
+                   <h3 class="masthead-brand"></h3>
+
+                   <nav>
+                       <ul class="nav masthead-nav">
+                           <li class="active"><a href="#">Home</a></li>
+                           <li><a href="#">Features</a></li>
+                           <li><a href="#">Contact</a></li>
+                       </ul>
+                   </nav>
+                   -->
+                </div>
+            </div>
+
+
+
+            <div class="inner cover" ng-hide="startSecondWizard || startFinancialWizard" ng-init="secondStepWizard = false; startWizard = false; thirdStepWizard = false;travelerSummary = false;">
+
+                <div ng-show="secondStepWizard == false && thirdStepWizard == false && startWizard == false">
+
+                    <h3>Your financial journey</h3>
+                    <div style="text-align:center;">
+                        <span class="col-md-2">
+                        </span>
+                        <span class="col-md-8" style="text-align:left;">
+                           <h2 style="color: green;">1. Financial Education</h2>
+                            <h2 style="color: green;">2. Financial Awareness</h2>
+                            <h2 style="color: green;">3. Financial Connection</h2>
+                        </span>
+                         <span class="col-md-2">
+                        </span>
+                    </div>
+                    <img src="img/MsGraduate/Start_your_journey.gif">
+                    <div class="text-middle">
+                        <input type="button" ng-click="secondStepWizard=true;openedRightSidebar();" onclick="$('#simple-menu-right').click()" value="Start your financial journey ..." class="btn btn-lg btn-primary"/>
+                    </div>
+                </div>
+
+                <div style="text-align:center" ng-show="secondStepWizard === true && thirdStepWizard == false && startWizard === false">
+
+                    <h2>Stages of your travel plan</h2>
+
+                    <img src="img/MsGraduate/Start_your_journey.gif">
+                    <br>
+                        <p>We now help you to map your financial journey to personal wealth.</p>
+                        <p> The following tutorials enable you to broaden and test your financial knowledge.</p>
+                    <br>
+
+
+                    <p class="leading">See your current progress on the right <span class="glyphicon glyphicon-menu-right"></span></p>
+                    <br>
+                    <div class="text-middle">
+                        <input type="button" ng-click="secondStepWizard=false;thirdStepWizard=true;closeRightSidebar();" onclick="$('#simple-menu-right').click()" value="Lets start now" class="btn btn-lg btn-primary"/>
+                    </div>
+                </div>
+
+                <div ng-show="thirdStepWizard === true && startWizard === false">
+
+                    <h2>Stages of your travel plan</h2>
+
+                    <br>
+                    <br>
+                    <div ng-include="'introduction.html'"></div>
+                    <br>
+                    <div class="text-middle">
+                        <input type="button" ng-click="thirdStepWizard=false;startWizard=true;"  value="Lets start now" class="btn btn-lg btn-primary"/>
+                    </div>
+                </div>
+
+                <div ng-show="startWizard == true">
+                    <wizard on-finish="finishedWizard()">
+
+                        <wz-step title="Lesson">
+                            <h2>2. Your Departure</h2>
+                           <div ng-include="'yourdeparture.html'"></div>
+                        </wz-step>
+
+                        <wz-step title="Traveler">
+                            <h2>2. Your Departure</h2>
+                            <img src="img/MsGraduate/Your_departure.gif">
+                            <br>
+                            <div ng-include="'travelertype.html'" style="text-align:left"></div>
+                        </wz-step>
+
+                        <wz-step title="Professional">
+                            <h2>2. Your Departure</h2>
+                            <img src="img/MsGraduate/Your_departure.gif">
+                            <br>
+                            <div ng-include="'travel_profession.html'" style="text-align:left"></div>
+                        </wz-step>
+
+                        <wz-step title="Personal">
+                            <h2>2. Your Departure</h2>
+                            <img src="img/MsGraduate/Your_departure.gif">
+                            <br>
+                            <div ng-include="'travel_relationship.html'" style="text-align:left"></div>
+                        </wz-step>
+
+                        <wz-step title="Objectives">
+                            <h2>2. Your Departure</h2>
+
+                            <img src="img/MsGraduate/Where_are_you_headed.gif">
+                            <p>
+                                Ok great. We have now identified your personal situation. Let’s continue with your travel destination.
+                            </p>
+                            <p>In other words, let’s find out, which finals goals you what to achieve in the future.
+                            </p>
+                            <audio class="audioDemo" controls preload="none">
+                                <source src="audio/Neue Aufnahme.mp3" type="audio/mp3">
+                            </audio>
+                            <div ng-include="'travel_headed.html'" style="text-align:left"></div>
+                        </wz-step>
+
+                        <wz-step title="Summary">
+                            <h1>Summary Travel <b>Stage 2</b></h1>
+
+                            <div ng-include="'travelertype.html'" style="text-align:left"></div>
+                            <div ng-include="'travel_profession.html'" style="text-align:left"></div>
+                            <div ng-include="'travel_relationship.html'" style="text-align:left"></div>
+                            <div ng-include="'travel_headed.html'" style="text-align:left"></div>
+                            <h2>Continue to next stage</h2>
+                            <div class="text-right" >
+                                <input type="submit" wz-previous value="Previous" class="btn btn-info"/>
+                                <input type="submit" wz-next value="Continue" ng-click="toStartSecondWizard();" class="btn btn-primary"/>
+                            </div>
+                        </wz-step>
+
+                        <br/>
+                    </wizard>
+                </div>
+            </div>
+
+
+            <div class="inner cover" ng-show="startFinancialWizard" ng-init="financial_summary = false;">
+                <h1>edufiy</h1>
+                <wizard on-finish="finishedWizard()">
+
+                    <wz-step title="Overview">
+                        <h2>The means of financial transportation</h2>
+                        <img src="img/MsGraduate/Means_of_financial_transportation.gif">
+                        <div ng-include="'financial_overview.html'" style="text-align: left;"></div>
+                    </wz-step>
+<!--
+                    <wz-step title="Question 1">
+                        <div ng-include="'step_02.html'"></div>
+                    </wz-step>
+-->
+                    <wz-step title="ETF Basics">
+                        <h2>ETF Basics</h2>
+                        <br>
+                        <video controls autobuffer autoplay preload="auto">
+                            <source src="vid/v1.mp4" type="video/mp4"  />
+                        </video>
+                        <div class="text-right">
+                            <input type="submit" wz-previous value="Previous" class="btn btn-info"/>
+                            <input type="submit" wz-next value="Continue to questions" class="btn btn-primary"/>
+                        </div>
+                    </wz-step>
+
+                    <wz-step title="ETF Basics">
+                        <h2>ETF Basics Questions</h2>
+                        <br>
+                        <div ng-include="'question_etf.html'" style="text-align:left"></div>
+                    </wz-step>
+
+
+                    <wz-step title="Question 3">
+                        <img src="img/MsGraduate/Means_of_financial_transportation.gif">
+                        <h2>How to regularily trade ETF shares?</h2>
+                        <div ng-include="'question_trade_eft_share_01.html'" style="text-align:left"></div>
+                    </wz-step>
+                    <wz-step title="Question">
+                        <img src="img/MsGraduate/Means_of_financial_transportation.gif">
+                        <h2>Do ETFs have a special focus?</h2>
+                        <div ng-include="'question_trade_eft_focus.html'" style="text-align:left"></div>
+                    </wz-step>
+
+                    <wz-step title="Finish">
+                        <div>
+                            <img src="img/KcnogxBcq.png">
+                            <br/>
+                            <h1>Edufy has educated you about financial basics. Be pepared for updates ...</h1>
+                        </div>
+                    </wz-step>
+<br/>
+                </wizard>
+            </div>
+
+            <div class="inner cover" ng-show="startSecondWizard" ng-init="prepared_summary = false;">
+                <h1>edufiy</h1>
+                <wizard on-finish="finishedWizard()">
+                    <wz-step title="Getting Prepared">
+                        <div style="text-align:center">
+                            <h2>4. Getting Prepared</h2>
+                            <img src="img/MsGraduate/Getting_prepared.gif">
+                            <p>Following pages just give an overview of the topics of this stage.</p>
+                        </div>
+
+                        <div class="text-right" ng-show="!prepared_summary">
+                            <input type="submit" wz-previous value="Previous" class="btn btn-info"/>
+                            <input type="submit" wz-next value="Continue" class="btn btn-primary"/>
+                        </div>
+                    </wz-step>
+
+                    <wz-step title="Horizon">
+                        <div style="text-align:center">
+                            <h2>4. Getting Prepared</h2>
+                            <p>* Exemplary overview stage content & steps</p>
+                            <img src="img/MsGraduate/Getting_prepared.gif">
+                        </div>
+                        <div ng-include="'prepared_horizon.html'" style="text-align:left"></div>
+                    </wz-step>
+
+                    <wz-step title="Risk&Return">
+                        <div style="text-align:center">
+                            <h2>4. Getting Prepared</h2>
+                            <p>* Exemplary overview stage content & steps</p>
+                            <img src="img/MsGraduate/Getting_prepared.gif">
+                        </div>
+                        <div ng-include="'prepared_riskreturninflate.html'" style="text-align:left"></div>
+                    </wz-step>
+
+                    <wz-step title="Timing">
+                        <div style="text-align:center">
+                            <h2>4. Getting Prepared</h2>
+                            <p>* Exemplary overview stage content & steps</p>
+                            <img src="img/MsGraduate/Getting_prepared.gif">
+                        </div>
+                        <div ng-include="'prepared_funds.html'" style="text-align:left"></div>
+                    </wz-step>
+
+                    <wz-step title="Rules">
+                        <div style="text-align:center">
+                            <h2>4. Getting Prepared</h2>
+                            <p>* Exemplary overview stage content & steps</p>
+                            <img src="img/MsGraduate/Getting_prepared.gif">
+                        </div>
+                        <div ng-include="'prepared_simplerules.html'" style="text-align:left"></div>
+                    </wz-step>
+                    <br/>
+                </wizard>
+            </div>
+
+            <div class="mastfoot">
+                <div class="inner">
+                    <!--  <p>HVB Hackaton</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+    <script type="text/javascript" src="js/svgcheckbox.js"></script>
+-->
+</body>
+</html>

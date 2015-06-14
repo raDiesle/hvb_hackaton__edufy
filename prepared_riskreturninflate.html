@@ -1,0 +1,46 @@
+
+<h2>Risk, Return & Inflation rate</h2>
+<img src="img/videomock.png">
+<br>Instruction Video, Text & Quiz
+<h3>Which risk profile do you have?</h3>
+
+<div class="form-group {{(prepared_summary) ? 'has-success' : ''}}" >
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Walker (very low risk & return)
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            Runner (low risk & return)
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Adventurer (Medium risk & return)
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Extreme mountaineer (high risk & return)
+        </label>
+    </div>
+</div>
+
+<br>
+<br>
+<div class="text-right" ng-show="!prepared_summary">
+    <input type="submit" wz-previous value="Previous" class="btn btn-info"/>
+    <input type="submit" wz-next value="Continue" class="btn btn-primary"/>
+</div>
+<br>

@@ -1,0 +1,53 @@
+
+<h3>Where are you headed? I want to safe for…</h3>
+
+<br>
+
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            My life after traveling (Retirement)
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            Increasing my wealth
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            My future travel mates (children, family, wife, etc)
+        </label>
+    </div>
+</div>
+<div class="form-group {{(travelerSummary) ? 'has-success' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Settling down (Real estate)
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Personal dreams (Car, education, etc)
+        </label>
+    </div>
+</div>
+
+<br>
+
+
+<div class="text-right" ng-hide="travelerSummary">
+    <input type="submit" wz-previous value="Previous" class="btn btn-info"/>
+    <input type="submit" wz-next value="Continue" ng-click="isTravelerSummary()" class="btn btn-primary"/>
+</div>

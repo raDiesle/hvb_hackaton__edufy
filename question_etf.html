@@ -1,0 +1,87 @@
+<h2>1. What is an ETF?</h2>
+
+<span ng-init="firstETFCheck = false;">
+    <div class="form-group {{firstETFCheck ? 'has-error' : ''}}">
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios"  value="option1" checked>
+                Direct ownership in companies?
+
+            </label>
+        </div>
+    </div>
+     <div class="leading">
+         <b>{{firstETFCheck ? 'No, an ETF does not mean that the owner directly invests in companies. An ETF is a security tracking underlying assets, for example the MSCI World index for international stocks.' : ''}}
+        </b>
+     </div>
+
+    <div class="form-group {{firstETFCheck ? 'has-success' : ''}}">
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios"  value="option1" checked>
+                A security tracking underlying assets?
+            </label>
+        </div>
+    </div>
+    <div class="leading">
+        <b>{{firstETFCheck ? 'Yes, an ETF is a security tracking underlying assets, for example the MSCI World index for international stocks5.' : ''}}</b>
+    </div>
+    <div class="form-group {{firstETFCheck ? 'has-error' : ''}}">
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" checked>
+                An actively managed funds?
+            </label>
+        </div>
+    </div>
+ <div class="leading">
+     <b>{{firstETFCheck ? 'No, an ETF is without active management.' : ''}}</b>
+ </div>
+
+
+    <br>
+    <h2>2. What causes the ETF to move?</h2>
+
+    <div class="form-group {{firstETFCheck ? 'has-success' : ''}}">
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios"  value="option1" checked>
+                The number of trades in the underlying asset?
+            </label>
+        </div>
+    </div>
+    <div class="leading">
+        <b>{{firstETFCheck ? 'Yes, The ETF is rising if the underlying index is climbing.' : ''}}</b>
+    </div>
+
+    <div class="form-group {{firstETFCheck ? 'has-error' : ''}}">
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios50" value="option1" checked>
+                The number of trades in the ETF?
+            </label>
+        </div>
+    </div>
+    <div class="leading">
+        <b>{{firstETFCheck ? 'No, it´s not important how many trades an ETF is executing. The ETF is rising if the underlying index is climbing.' : ''}}</b>
+    </div>
+
+    <div class="form-group {{firstETFCheck ? 'has-error' : ''}}">
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios11" value="option1" checked>
+                The annual minimum return?
+            </label>
+        </div>
+    </div>
+    <div class="leading">
+        <b>{{firstETFCheck ? 'No, the annual minimum return is not relevant. The ETF is rising if the underlying index is climbing.' : ''}}</b>
+    </div>
+    <br>
+    <br>
+    <div class="text-right">
+        <input type="submit" wz-previous value="Previous" class="btn btn-info"/>
+        <input type="submit" value="Check Answers" ng-click="firstETFCheck = true;" class="btn btn-warning"/>
+        <input type="submit" wz-next value="Continue" class="btn btn-primary"/>
+    </div>
+</span>

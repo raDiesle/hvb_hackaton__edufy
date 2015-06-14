@@ -1,0 +1,34 @@
+<h3>What traveler are you?</h3>
+
+<div class="form-group {{(travelerSummary) ? 'has-success' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            First time traveler (Beginner)
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            Frequent Traveler (Advanced)
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Permanent Traveler (Expert)
+        </label>
+    </div>
+</div>
+
+<br>
+
+
+<div class="text-right" ng-hide="travelerSummary">
+    <input type="submit" wz-previous value="Previous" class="btn btn-info"/>
+    <input type="submit" wz-next value="Continue" class="btn btn-primary"/>
+</div>

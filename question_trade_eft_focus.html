@@ -1,0 +1,82 @@
+<span ng-init="thirdETFCheck = false;">
+
+<div class="form-group {{thirdETFCheck ? 'has-success' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Yes
+        </label>
+    </div>
+</div>
+ <div class="leading">
+     <b>{{thirdETFCheck ? 'Yes, every ETF has a special focus, for example German big companies (Blue Chip)' : ''}}
+     </b>
+ </div>
+
+
+<div class="form-group {{thirdETFCheck ? 'has-error' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            No
+        </label>
+    </div>
+</div>
+ <div class="leading">
+     <b>{{thirdETFCheck ? 'No, every ETF has a special focus, for example German big companies (Blue Chip)' : ''}}
+     </b>
+ </div>
+
+
+<br>
+<h2>What is the advantage of an ETF?</h2>
+
+<div class="form-group {{thirdETFCheck ? 'has-error' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            Direct ownership in different companies?
+        </label>
+    </div>
+</div>
+<div class="leading">
+    <b>{{thirdETFCheck ? 'No, an ETF does not mean that the owner directly invests in companies.' : ''}}
+    </b>
+</div>
+
+<div class="form-group {{thirdETFCheck ? 'has-success' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Diversification over broad market sector with one investment?
+        </label>
+    </div>
+</div>
+<div class="leading">
+    <b>{{thirdETFCheck ? 'Yes, with an ETF you can invest over broad market sector with one investment.' : ''}}
+    </b>
+</div>
+
+<div class="form-group {{thirdETFCheck ? 'has-error' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Specialised investment in one sector/topic?
+        </label>
+    </div>
+</div>
+<div class="leading">
+    <b>{{thirdETFCheck ? 'No, with an ETF you can invest over broad market sector with one investment.' : ''}}
+    </b>
+</div>
+
+
+<br>
+<br>
+
+<div class="text-right">
+    <input type="submit" wz-previous value="Previous" class="btn btn-info"/>
+    <input type="submit" ng-click="thirdETFCheck=true" value="Check" class="btn btn-warning"/>
+    <input type="submit" wz-next value="Continue" class="btn btn-primary"/>
+</div>
+</span>

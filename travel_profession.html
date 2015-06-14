@@ -1,0 +1,35 @@
+<h3>What are you doing at the moment? I am …</h3>
+
+
+<div class="form-group {{(travelerSummary) ? 'has-success' : ''}}" >
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            A Student or unemployed
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            (hard working) employed or self-employed
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            retired and enjoying life
+        </label>
+    </div>
+</div>
+
+<br>
+
+
+<div class="text-right" ng-hide="travelerSummary">
+    <input type="submit" wz-previous value="Previous" class="btn btn-info"/>
+    <input type="submit" wz-next value="Continue" class="btn btn-primary"/>
+</div>

@@ -1,0 +1,93 @@
+<span ng-init="secondETFCheck = false;">
+
+<div class="form-group {{secondETFCheck ? 'has-success' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            Directly trade ETF shares in the market?
+        </label>
+    </div>
+</div>
+ <div class="leading">
+     <b>{{secondETFCheck ? 'Yes, the owner can always sell ETF shares in the market.' : ''}}
+     </b>
+ </div>
+
+<div class="form-group {{secondETFCheck ? 'has-error' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            Sell the ETF shares privately ?
+        </label>
+    </div>
+</div>
+<div class="leading">
+    <b>{{secondETFCheck ? 'No, the ETF shares are usually not sold from private clients to private clients. They are traded directly in the market.' : ''}}
+    </b>
+</div>
+
+<div class="form-group {{secondETFCheck ? 'has-error' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            Sell the ETF shares to your personal bank?
+        </label>
+    </div>
+</div>
+<div class="leading">
+    <b>
+        {{secondETFCheck ? 'No, the ETF shares are not sold to one bank. They are traded directly in the market.' : ''}}
+    </b>
+</div>
+<br>
+<br>
+<h2>Can an ETF trade at a different value than the underlying asset?</h2>
+
+<div class="form-group {{secondETFCheck ? 'has-success' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            Yes, but only in the short-run.
+        </label>
+    </div>
+</div>
+<div class="leading">
+    <b>
+        {{secondETFCheck ? 'Yes, but only in the short-run.' : ''}}
+    </b>
+</div>
+
+<div class="form-group {{secondETFCheck ? 'has-error' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            No, never.
+        </label>
+    </div>
+</div>
+<div class="leading">
+    <b>{{secondETFCheck ? 'No, an ETF can trade at a different value than the underlying asset only in the short-run. ' : ''}}
+    </b>
+</div>
+
+<div class="form-group {{secondETFCheck ? 'has-error' : ''}}">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            Yes, also in the long-run.
+        </label>
+    </div>
+</div>
+<div class="leading">
+    <b>{{secondETFCheck ? 'No, an ETF can trade at a different value than the underlying asset only in the short-run.' : ''}}
+    </b>
+</div>
+<br>
+<br>
+
+<div class="text-right">
+    <input type="submit" wz-previous value="Previous" class="btn btn-info"/>
+    <input type="submit" value="Check Answers" ng-click="secondETFCheck = true;" class="btn btn-warning"/>
+    <input type="submit" wz-next value="Continue" class="btn btn-primary"/>
+</div>
+</span>

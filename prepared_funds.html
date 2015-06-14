@@ -1,0 +1,55 @@
+
+<h2>Point of Investment & availability of funds</h2>
+<img src="img/videomock.png">
+<br>Instruction Video, Text & Quiz
+<h3>Do you want a constant monthly savings plan?</h3>
+
+<div class="form-group {{(prepared_summary) ? 'has-success' : ''}}" >
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Yes, I want to invest <input type="number" value="500"> € per month
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" value="option1" checked>
+            No, I don’t want to invest monthly
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Do you want to do a singular investment?
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            Yes, I want to invest <input type="number" value="500"> € at once
+        </label>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios"  value="option1" checked>
+            No, I don’t to do a singular investment
+        </label>
+    </div>
+</div>
+
+<br>
+<br>
+<div class="text-right" ng-show="!prepared_summary">
+    <input type="submit" wz-previous value="Previous" class="btn btn-info"/>
+    <input type="submit" wz-next value="Continue" class="btn btn-primary"/>
+</div>
+<br>
